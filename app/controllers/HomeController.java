@@ -21,7 +21,7 @@ public class HomeController extends Controller {
     public Result explore() {
         return ok(views.html.explore.render());
     }
-    
+    /*this is using intellij*/
     public Result tutorial() {
         return ok(views.html.tutorial.render());
     }
