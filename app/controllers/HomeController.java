@@ -25,5 +25,5 @@ public class HomeController extends Controller {
     public Result tutorial() {
         return ok(views.html.tutorial.render());
     }
-	/*this commit is using cmd and intellij to make conlflict*/
+	/*this commit is using cmd and intellij to make conlflict again*/
 }
