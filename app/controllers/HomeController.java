@@ -26,4 +26,5 @@ public class HomeController extends Controller {
         return ok(views.html.tutorial.render());
     }
 	/*this commit is using intellij*/
+	/*this commit is using cmd*/
 }
