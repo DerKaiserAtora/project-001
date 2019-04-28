@@ -26,4 +26,7 @@ public class HomeController extends Controller {
         return ok(views.html.tutorial.render());
     }
 	/*this commit is using intellij only to make conflict again*/
+    /*line 1*/
+    /*line 2*/
+    /*line 3*/
 }
