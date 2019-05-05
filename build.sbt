@@ -10,3 +10,6 @@ scalaVersion := "2.12.6"
 crossScalaVersions := Seq("2.12.6", "2.11.12")
 
 libraryDependencies += guice
+
+// https://mvnrepository.com/artifact/com.datadoghq/java-dogstatsd-client
+libraryDependencies += "com.datadoghq" % "java-dogstatsd-client" % "2.6.1"

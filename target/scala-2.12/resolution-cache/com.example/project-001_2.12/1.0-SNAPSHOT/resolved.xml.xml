@@ -4,7 +4,7 @@
 		module="project-001_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190428123256"
+		publication="20190505205903"
 	>
 		<description>
 		project-001
@@ -50,5 +50,6 @@
 		<dependency org="com.typesafe.play" name="play-logback_2.12" rev="2.6.20" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-akka-http-server_2.12" rev="2.6.20" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-guice_2.12" rev="2.6.20" conf="compile->default(compile)"/>
+		<dependency org="com.datadoghq" name="java-dogstatsd-client" rev="2.6.1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
