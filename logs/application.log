@@ -1,0 +1,7 @@
+2019-04-28 12:30:53,318 [INFO] from play.api.http.EnabledFilters in pool-24-thread-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-04-28 12:30:53,551 [INFO] from play.api.Play in pool-24-thread-2 - Application started (Dev)
