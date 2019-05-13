@@ -1,12 +1,20 @@
 package controllers;
 
+import com.google.inject.Inject;
 import play.mvc.*;
+import utils.DatadogClient;
 
 /**
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
  */
 public class HomeController extends Controller {
+    private DatadogClient datadog;
+
+    @Inject
+    public HomeController(DatadogClient datadog) {
+        this.datadog = datadog;
+    }
 
     /**
      * An action that renders an HTML page with a welcome message.
@@ -23,6 +31,7 @@ public class HomeController extends Controller {
     }
     /*this is using intellij*/
     public Result tutorial() {
+        datadog.increment("test-datadog-aspect", "tutorial api was hit", "sending info for datadog");
         return ok(views.html.tutorial.render());
     }
 	/*this commit is using intellij*/

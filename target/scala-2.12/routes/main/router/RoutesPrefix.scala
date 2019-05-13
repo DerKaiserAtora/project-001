@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/GIT/project-001/conf/routes
-// @DATE:Sun Apr 28 12:32:59 ICT 2019
+// @DATE:Mon May 06 02:08:06 ICT 2019
 
 
 package router {

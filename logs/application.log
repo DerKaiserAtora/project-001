@@ -1,7 +1,399 @@
-2019-04-28 12:30:53,318 [INFO] from play.api.http.EnabledFilters in pool-24-thread-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-05-06 00:44:14,722 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-19 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2019-04-28 12:30:53,551 [INFO] from play.api.Play in pool-24-thread-2 - Application started (Dev)
+2019-05-06 00:44:15,982 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-19 - 
+
+! @7bmc09dn8 - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, com.timgroup.statsd.StatsDClientException: Failed to lookup StatsD host
+  at utils.DatadogClient.<init>(DatadogClient.java:13)
+  at utils.DatadogClient.class(DatadogClient.java:13)
+  while locating utils.DatadogClient
+    for the 1st parameter of controllers.HomeController.<init>(HomeController.java:15)
+  while locating controllers.HomeController
+    for the 2nd parameter of router.Routes.<init>(Routes.scala:30)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for the 1st parameter of play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:217)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for the 6th parameter of play.api.DefaultApplication.<init>(Application.scala:236)
+  at play.api.DefaultApplication.class(Application.scala:235)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
+
+1 error]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:186)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:124)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:241)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:138)
+	at akka.stream.impl.fusing.MapAsyncUnordered$$anon$26.onPush(Ops.scala:1304)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:760)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: com.google.inject.ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, com.timgroup.statsd.StatsDClientException: Failed to lookup StatsD host
+  at utils.DatadogClient.<init>(DatadogClient.java:13)
+  at utils.DatadogClient.class(DatadogClient.java:13)
+  while locating utils.DatadogClient
+    for the 1st parameter of controllers.HomeController.<init>(HomeController.java:15)
+  while locating controllers.HomeController
+    for the 2nd parameter of router.Routes.<init>(Routes.scala:30)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for the 1st parameter of play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:217)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for the 6th parameter of play.api.DefaultApplication.<init>(Application.scala:236)
+  at play.api.DefaultApplication.class(Application.scala:235)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
+
+1 error
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1028)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1054)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:409)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:404)
+	at play.api.inject.ContextClassLoaderInjector.$anonfun$instanceOf$2(Injector.scala:117)
+	at play.api.inject.ContextClassLoaderInjector.withContext(Injector.scala:126)
+	at play.api.inject.ContextClassLoaderInjector.instanceOf(Injector.scala:117)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:137)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:174)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:171)
+	... 24 common frames omitted
+Caused by: com.timgroup.statsd.StatsDClientException: Failed to lookup StatsD host
+	at com.timgroup.statsd.NonBlockingStatsDClient.staticStatsDAddressResolution(NonBlockingStatsDClient.java:1102)
+	at com.timgroup.statsd.NonBlockingStatsDClient.<init>(NonBlockingStatsDClient.java:283)
+	at com.timgroup.statsd.NonBlockingStatsDClient.<init>(NonBlockingStatsDClient.java:196)
+	at utils.DatadogClient.<init>(DatadogClient.java:17)
+	at utils.DatadogClient$$FastClassByGuice$$46a38920.newInstance(<generated>)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$FastClassProxy.newInstance(DefaultConstructionProxyFactory.java:89)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:111)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1019)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1015)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1054)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:409)
+	at play.api.inject.ContextClassLoaderInjector.$anonfun$instanceOf$3(Injector.scala:118)
+	at play.api.inject.ContextClassLoaderInjector.withContext(Injector.scala:126)
+	at play.api.inject.ContextClassLoaderInjector.instanceOf(Injector.scala:118)
+	at play.api.inject.RoutesProvider.$anonfun$get$2(BuiltinModule.scala:107)
+	at scala.Option.fold(Option.scala:158)
+	at play.api.inject.RoutesProvider.get$lzycompute(BuiltinModule.scala:107)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:103)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:102)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1019)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1015)
+	... 35 common frames omitted
+Caused by: java.net.UnknownHostException: http://localhost
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at java.net.InetAddress.getByName(InetAddress.java:1076)
+	at com.timgroup.statsd.NonBlockingStatsDClient$5.call(NonBlockingStatsDClient.java:1075)
+	at com.timgroup.statsd.NonBlockingStatsDClient$5.call(NonBlockingStatsDClient.java:1070)
+	at com.timgroup.statsd.NonBlockingStatsDClient.staticAddressResolution(NonBlockingStatsDClient.java:1090)
+	at com.timgroup.statsd.NonBlockingStatsDClient.staticStatsDAddressResolution(NonBlockingStatsDClient.java:1100)
+	... 95 common frames omitted
+2019-05-06 00:45:34,414 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-18 - 
+
+! @7bmc09dn8 - Internal server error, for (GET) [/] ->
+ 
+play.api.UnexpectedException: Unexpected exception[ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, com.timgroup.statsd.StatsDClientException: Failed to lookup StatsD host
+  at utils.DatadogClient.<init>(DatadogClient.java:13)
+  at utils.DatadogClient.class(DatadogClient.java:13)
+  while locating utils.DatadogClient
+    for the 1st parameter of controllers.HomeController.<init>(HomeController.java:15)
+  while locating controllers.HomeController
+    for the 2nd parameter of router.Routes.<init>(Routes.scala:30)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for the 1st parameter of play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:217)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for the 6th parameter of play.api.DefaultApplication.<init>(Application.scala:236)
+  at play.api.DefaultApplication.class(Application.scala:235)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
+
+1 error]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:186)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:124)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:241)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:138)
+	at akka.stream.impl.fusing.MapAsyncUnordered$$anon$26.onPush(Ops.scala:1304)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:760)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: com.google.inject.ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, com.timgroup.statsd.StatsDClientException: Failed to lookup StatsD host
+  at utils.DatadogClient.<init>(DatadogClient.java:13)
+  at utils.DatadogClient.class(DatadogClient.java:13)
+  while locating utils.DatadogClient
+    for the 1st parameter of controllers.HomeController.<init>(HomeController.java:15)
+  while locating controllers.HomeController
+    for the 2nd parameter of router.Routes.<init>(Routes.scala:30)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for the 1st parameter of play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:217)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for the 6th parameter of play.api.DefaultApplication.<init>(Application.scala:236)
+  at play.api.DefaultApplication.class(Application.scala:235)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
+
+1 error
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1028)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1054)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:409)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:404)
+	at play.api.inject.ContextClassLoaderInjector.$anonfun$instanceOf$2(Injector.scala:117)
+	at play.api.inject.ContextClassLoaderInjector.withContext(Injector.scala:126)
+	at play.api.inject.ContextClassLoaderInjector.instanceOf(Injector.scala:117)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:137)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:174)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:171)
+	... 24 common frames omitted
+Caused by: com.timgroup.statsd.StatsDClientException: Failed to lookup StatsD host
+	at com.timgroup.statsd.NonBlockingStatsDClient.staticStatsDAddressResolution(NonBlockingStatsDClient.java:1102)
+	at com.timgroup.statsd.NonBlockingStatsDClient.<init>(NonBlockingStatsDClient.java:283)
+	at com.timgroup.statsd.NonBlockingStatsDClient.<init>(NonBlockingStatsDClient.java:196)
+	at utils.DatadogClient.<init>(DatadogClient.java:17)
+	at utils.DatadogClient$$FastClassByGuice$$46a38920.newInstance(<generated>)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$FastClassProxy.newInstance(DefaultConstructionProxyFactory.java:89)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:111)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1019)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1015)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1054)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:409)
+	at play.api.inject.ContextClassLoaderInjector.$anonfun$instanceOf$3(Injector.scala:118)
+	at play.api.inject.ContextClassLoaderInjector.withContext(Injector.scala:126)
+	at play.api.inject.ContextClassLoaderInjector.instanceOf(Injector.scala:118)
+	at play.api.inject.RoutesProvider.$anonfun$get$2(BuiltinModule.scala:107)
+	at scala.Option.fold(Option.scala:158)
+	at play.api.inject.RoutesProvider.get$lzycompute(BuiltinModule.scala:107)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:103)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:102)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:90)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:268)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1019)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1015)
+	... 35 common frames omitted
+Caused by: java.net.UnknownHostException: http://localhost
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at java.net.InetAddress.getByName(InetAddress.java:1076)
+	at com.timgroup.statsd.NonBlockingStatsDClient$5.call(NonBlockingStatsDClient.java:1075)
+	at com.timgroup.statsd.NonBlockingStatsDClient$5.call(NonBlockingStatsDClient.java:1070)
+	at com.timgroup.statsd.NonBlockingStatsDClient.staticAddressResolution(NonBlockingStatsDClient.java:1090)
+	at com.timgroup.statsd.NonBlockingStatsDClient.staticStatsDAddressResolution(NonBlockingStatsDClient.java:1100)
+	... 95 common frames omitted
+2019-05-06 00:46:27,531 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-11 - 
+
+! @7bmc0h1jb - Internal server error, for (GET) [/] ->
+ 
+play.sbt.PlayExceptions$UnexpectedException: Unexpected exception[OverlappingFileLockException: null]
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$1(PlayReload.scala:35)
+	at scala.Option.map(Option.scala:146)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:28)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:24)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:51)
+	at scala.util.Either$LeftProjection.map(Either.scala:569)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:51)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:76)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:412)
+	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:50)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:55)
+	at play.runsupport.Reloader.reload(Reloader.scala:412)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:123)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:241)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:138)
+	at akka.stream.impl.fusing.MapAsyncUnordered$$anon$26.onPush(Ops.scala:1304)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:760)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.nio.channels.OverlappingFileLockException: null
+	at sun.nio.ch.SharedFileLockTable.checkList(FileLockTable.java:255)
+	at sun.nio.ch.SharedFileLockTable.add(FileLockTable.java:152)
+	at sun.nio.ch.FileChannelImpl.lock(FileChannelImpl.java:1063)
+	at java.nio.channels.FileChannel.lock(FileChannel.java:1053)
+	at org.jetbrains.plugins.scala.indices.protocol.sbt.Locking$.lock(Locking.scala:23)
+	at org.jetbrains.plugins.scala.indices.protocol.sbt.Locking$FileLockingExt$.lock$extension(Locking.scala:51)
+	at org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin$.$anonfun$perConfig$2(SbtIntellijIndicesPlugin.scala:62)
+	at scala.Function1.$anonfun$compose$1(Function1.scala:44)
+	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:40)
+	at sbt.std.Transform$$anon$4.work(System.scala:67)
+	at sbt.Execute.$anonfun$submit$2(Execute.scala:269)
+	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:16)
+	at sbt.Execute.work(Execute.scala:278)
+	at sbt.Execute.$anonfun$submit$1(Execute.scala:269)
+	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:178)
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:37)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-05-06 00:46:56,782 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-15 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-05-06 00:46:56,948 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-15 - Application started (Dev)
+2019-05-06 00:55:47,847 [WARN] from akka.actor.ActorSystemImpl in play-dev-mode-akka.actor.default-dispatcher-65 - Illegal request, responding with status '505 HTTP Version Not Supported': The server does not support the HTTP protocol version used in the request.
