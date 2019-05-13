@@ -27,9 +27,6 @@ public class HomeController extends Controller {
     }
 	/*this commit is using intellij*/
 	/*this commit is using cmd*/
-	/*sadfasdfasdfasdfasdfasdfasdfasdf*/
-	/*this commit is using intellij only to make conflict again*/
-    /*line 1*/
     /*line 2*/
     /*line 3*/
     /*line 4*/
